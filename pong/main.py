@@ -1,28 +1,26 @@
 from turtle import Screen, Turtle
+import padel
+
 screen = Screen()
 screen.bgcolor("blue")
 screen.setup(width=800, height=600)
 screen.title("Ping Pong")
 screen.tracer(0)
 
-padel_right = Turtle()
-padel_right.shape("square")
-padel_right.color("white")
-padel_right.shapesize(stretch_wid=5, stretch_len=1)
-padel_right.penup()
-padel_right.goto(350, 0)
- 
-def go_up():
-    snew_y = padel_right.ycor() + 20
-    padel_right.sety(new_y)
+PADEL_POS_R = (350,0)
+PADEL_POS_L = (-350,0)
 
-def go_down():
-    new_y = padel_right.ycor() - 20
-    padel_right.sety(new_y)
+padel_r = padel.Padel(PADEL_POS_R)
+padel_l = padel.Padel(PADEL_POS_L)
 
 screen.listen()
-screen.onkey(go_up, "Up")
-screen.onkey(go_down, "Down")
+
+screen.onkey(padel_r.go_up, "Up")
+screen.onkey(padel_r.go_dn, "Down")
+screen.onkey(padel_l.go_up, 'w')
+screen.onkey(padel_l.go_dn, 's')
+
+
 
 game_is_on = True
 while game_is_on:
