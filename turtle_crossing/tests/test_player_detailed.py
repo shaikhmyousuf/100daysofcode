@@ -11,7 +11,7 @@ Each test includes detailed comments explaining EVERY line.
 
 import pytest                                    # Test framework
 from unittest.mock import MagicMock, patch      # Tools to fake/replace objects
-from player import Player, STARTING_POSITION, FINISH_LINE_Y, MOVE_DISTANCE
+from turtle_crossing.game_objects.player import Player, STARTING_POSITION, FINISH_LINE_Y, MOVE_DISTANCE
 
 
 # ============================================================================

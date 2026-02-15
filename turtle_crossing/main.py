@@ -1,8 +1,8 @@
 import time
 from turtle import Screen
-import player
-import car_manager 
-import scoreboard 
+import game_objects.player as player
+import game_objects.car_manager as car_manager 
+import game_objects.scoreboard as scoreboard 
 
 screen = Screen()
 screen.setup(width=600, height=600)
